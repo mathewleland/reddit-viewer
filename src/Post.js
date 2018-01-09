@@ -9,8 +9,7 @@ export default class Post extends React.Component {
       numberOfComments: 0,
       topComment: "No comments found",
       commentUrl: null,
-      author: null,
-      imageUrl: 'http://www.clker.com/cliparts/b/m/L/p/r/u/gray-square-hi.png'
+      author: null
     }
 
     this.grabData = this.grabData.bind(this);

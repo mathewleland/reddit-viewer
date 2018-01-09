@@ -23,7 +23,6 @@ class App extends Component {
   componentDidMount() {
     const defaultSubs = ['programming', 'webdev', 'coding', 'reverseengineering', 'startups', 'python', 'javascript', 'ruby', 'cpp'];
     defaultSubs.map(this.getPosts);
-    // this.getPosts('funny');
   }
 
   getPosts(subreddit) {
@@ -61,7 +60,7 @@ class App extends Component {
     const query = this.state.query.toLowerCase();
     let matches = [];
 
-    this.state.posts.map(post => {
+    this.state.posts.forEach(post => {
       if (post.data.title.toLowerCase().indexOf(query) > -1) {
         matches.push(post)
       };
@@ -77,7 +76,6 @@ class App extends Component {
   }
 
   handleSubmit(e) {
-    console.log('submitted');
     e.preventDefault();
     this.filterPosts();
   }
@@ -104,7 +102,6 @@ class App extends Component {
             <input onChange={this.handleChange} value={this.state.query}/>
           </form>
 
-          
           {posts}
         </div>
       </div>
